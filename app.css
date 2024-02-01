@@ -1,0 +1,422 @@
+/*NavBar*/
+header{
+    margin: 0;;
+}
+.navbar{
+    background-color:rgb(140, 125, 143);
+    margin: 0;
+    width: 100%;
+    max-height: 180px;
+    color: antiquewhite;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    font-variant: small-caps;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 8px 4px;
+    gap: 4px 30px;
+}
+.navbar a{
+    display: block;
+    padding:4px;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    -webkit-box-shadow: 0px 10px 0px -10px rgb(140, 125, 143), 0px -10px 0px -10px rgb(140, 125, 143), 10px 0px 0px -10px rgb(140, 125, 143), -10px 0px 0px -10px rgb(140, 125, 143), 0px 0px 0px 10px cadetblue, 7px 24px 34px 29px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 0px -10px rgb(140, 125, 143), 0px -10px 0px -10px rgb(140, 125, 143), 10px 0px 0px -10px rgb(140, 125, 143), -10px 0px 0px -10px rgb(140, 125, 143), 0px 0px 0px 10px cadetblue, 7px 24px 34px 29px rgba(0,0,0,0);
+    background: rgb(140, 125, 143);
+}
+
+li img{
+    display: block;
+    padding: 0;
+    height: auto;
+    width: auto;
+    max-height: 40px;
+}
+
+
+
+
+
+/*Footer*/
+footer{
+    width: 100%;
+    height: 31px;
+    margin: 0;
+    text-align: center;
+    background-color: rgb(140, 125, 143);
+}
+.footer{
+    width: 100%;
+}
+footer h4{
+    padding: 4px;
+    color: antiquewhite;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    font-variant: small-caps;
+    text-decoration: none;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    text-transform: none;
+}
+
+
+.gen-body{
+    margin: 0;
+    background-color: cadetblue;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+}
+
+
+
+/*Programming Page */
+.programming-body{
+    text-align: center;
+    margin: 20px;
+}
+.programming-body h1{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+.web-descrip-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    font-weight:lighter;
+}
+.web-descrip-div a{
+    color: #000000;
+}
+.web-descrip{
+   max-width: 700px;
+   margin:0;
+   margin-bottom: 12px;
+   font-weight:lighter;
+
+}
+.webs{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px 30px;
+}
+.webs a{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #4f3261;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    font-variant: small-caps;
+    text-decoration: overline;
+    font-weight: normal;
+    font-style: normal;
+    margin: 4px 20px;
+    margin:0;
+}
+.webs h3{
+    margin-top:12px;
+}
+.webs a>div { display: none; }
+.webs a:hover>div { 
+    display: block;
+}
+.webs img{
+    width: 35%;
+    margin-top: 12px;
+}
+.digital-illu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.digital-illu a{
+    text-decoration: none;
+}
+.illu-items{
+    display: block;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #000000;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    font-variant: small-caps;
+    font-weight: normal;
+    font-style: normal;
+}
+.illu-items img{
+    max-width: 300px;
+    max-height: 400px;
+}
+.donde-clara-gall{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.donde-clara-gall img{
+    max-width: 300px;
+    margin: 23px;
+}
+.donde-clara-desc{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 23px;
+}
+.donde-clara-desc h3{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #000000;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    font-variant: small-caps;
+    font-weight: normal;
+    font-style: normal;
+    margin: 12px;
+}
+.donde-clara-desc h5{
+    font-weight: normal;
+    font-style: normal;
+    width: 70%;
+    margin: 12px;
+}
+.donde-clara-desc a{
+    color: #000000;
+}
+.codeCandy-gall{
+    text-align: center;
+    max-width: 100%;
+    min-width: 300px;
+}
+.codeCandy-gall img{
+    width: 80%;
+    max-width: 600px;
+    margin: 23px;
+}
+.quiro-gall{
+    text-align: center;
+    max-width: 100%;
+    min-width: 300px;
+}
+.quiro-line1{
+    width: 80%;
+    max-width: 600px;
+    margin: 12px;
+}
+.quiro-line2{
+    display: inline;
+    width: 80%;
+    max-width: 300px;
+}
+.quiro-line3{
+    width: 80%;
+    max-width: 300px;
+    margin: 12px;
+}
+
+
+
+
+
+/*Poetry Page*/
+.poetry-body{
+    padding: 0;
+    text-align: center;
+}
+.poetry-book{
+    margin: 20px;
+}
+.poetry-book h1, h3{
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    text-align: center;
+}
+.poetry-book p{
+        letter-spacing: 1.2px;
+        word-spacing: 1,4px;
+        font-size: 14px;
+}
+.poetry-book button{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    background-color: rgb(140, 125, 143);
+    border-radius: 10%;
+    color: antiquewhite;
+}
+.poetry-book input{
+    width: 60px;
+    height: 20px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    background-color: rgba(140, 125, 143, 0.507);
+    color: antiquewhite;
+}
+.poem-displayed{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#result{
+    text-align: left;
+    margin:0;
+    font-style:italic;
+}
+
+
+
+
+
+/*ABOUT ME PAGE*/
+.who-i-am{
+    text-align: center;
+    margin: 20px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    margin-bottom: 4rem;
+}
+.who-i-am h4{
+    margin:0;
+    padding:2px;
+}
+.who-i-am h6{
+    margin:0;
+    padding:2px;
+    font-size: 14px;
+}
+.who-i-am p{
+    font-size: 10px;
+    margin:0;
+    padding:0;
+}
+
+
+
+
+/*HOME PAGE*/
+.nood-gallery{
+    text-align: center;
+    margin-top: 4px;
+}
+.nood-gallery img:hover{
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+.nood-group1{
+    display: inline-block;
+}
+.nood-group2{
+    display: inline-block;
+
+}
+.nood-group1 img{
+    width: 40%;
+    max-width: 240px;
+    margin: 8px;
+    height: auto;
+}
+.nood-group2 img{
+    width: 40%;
+    max-width: 240px;
+    margin: 8px;
+    height: auto;
+}
+
+footer h4{
+    margin: 0;
+    padding:6px;
+}
+
+/*Projects Page*/ 
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+   
+    width: fit-content;
+    
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: rgb(140, 125, 143);
+    color: antiquewhite;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    letter-spacing: 1.4px;
+    word-spacing: 2.4px;
+    font-variant: small-caps;
+    text-decoration: none;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    text-transform: none;
+    margin:10px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #491e498d;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #491e498d;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    border-top: none;
+    text-align: center;
+    padding: 0 12px;
+  }
+  
+.project-gall{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+.project-gall img{
+    max-width: 300px;
+    padding: 10px;
+}

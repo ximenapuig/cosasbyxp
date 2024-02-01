@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="app.css"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>XPoetry</title>
+    </head>
+    <body class="gen-body poetry-body">
+        <header>
+            <ul class="navbar">
+                <li class="logo"><a href="index.html"><img alt="logo" src="/Users/ximenapuig/Desktop/cosasbyxp/imgs/cosas-logo.jpg"></a></li>
+                <li class="nav-item"><a href="painting.html">Painting</a></li>
+                <li class="nav-item"><a href="poetry.html">Poetry</a></li>
+                <li class="nav-item"><a href="programming.html">Programming</a></li>
+                <li class="nav-item"><a href="projects.html">Projects</a></li>
+                <li class="nav-item"><a href="about-me.html">who is XP?</a></li>
+            </ul>
+        </header>
+        <div class="poetry-book">
+            <h1>Pick~a~Number Poetry Book</h1>
+            <h3>Welcome to the first version of my poetry book. Hope you enjoy!</h3>
+            <p>I have written many poems~phrases~lyrics over the years and I wanted to avoid the inhumane act of endless scrolling. 
+                <br> This way, not only does it feel a little like a game, it is also a way to give each poem the individuality they deserve.
+                <br> You will find that most are written in English, others in Spanish, and a few in Spanglish. Poems are not in chronological order :)
+            </p>
+            <p>Pick a number from 1-82 to start reading...</p>
+            Poem #: <input type="number" id="poemNum">
+            <button onclick="checkPoemNum()">take me there...</button>
+            <br>
+            <br>
+            <div class="poem-displayed">
+                <p id="result"></p>
+            </div>
+            <br>
+            <script>
+                let poem1 = "'A Flow'<br><br>It comes and goes. <br>Her need, <br>Her desire for more.<br><br>Love, XP";
+                let poem2 = "'Hide Away'<br><br>We swallowed our thoughts, <br>Because saying them out loud would cause more pain.<br><br>Love, XP";
+                let poem3 = "'Fog'<br><br>A mysterious morning<br>The clouds engulf the city<br>Asking me to stay<br>Leaving no trace<br><br>Why is it that the sky falls?<br>Leaving us to appreciate <br>Only the things <br>That are near our skins<br><br>Love, XP";
+                let poem4 = "'Beauty in a Brush'<br><br>If I want to have a good day <br>I start by painting. <br>I am instantly reminded <br>Of the beauty <br>That surrounds me. <br><br>Love, XP";
+                let poem5 = "'First Thought in Asia'<br><br>Green swallowed in green. <br>The leaves vibrant <br>And glistening. <br><br>I think of you,<br>Wondering if you’d come with<br>to Sabah. <br><br>The houses are lifted from the ground <br>As if they know that the ground is sacred. <br><br>Not unlike the times<br>I lifted my heels and stood on my toes,<br>As if I knew your lips were sacred. <br><br>Love, XP";
+                let poem6 = "'Let Me Smile'<br><br>I feel the beauty.<br>I feel the life.<br><br>Una mirada y<br>me acuerdo de todo. <br><br>It’s the smallest things<br>that make me the happiest. <br><br>When no one asks me <br>why I’m smiling:<br>I feel peace. <br>I feel alive.<br><br>Love, XP";
+                let poem7 = "'Unreliable You'<br><br>I didn’t know <br>You’d come to us <br>For more... <br><br>Love, XP";
+                let poem8 = "'2 Tounges, 2 Lenguas'<br><br>I will never forget the color of your eyes. <br>Nunca me olvidaré del color de tus ojos.<br><br>Love, XP ";
+                let poem9 = "'Donde Nací' <br><br>Las calles de Madrid huelen a lluvia y tabaco.<br><br>Love, XP";
+                let poem10 = "'Overdone Love'<br><br>My love for you continues to grow<br>As I grow weaker <br>I see nothing but you <br>I feel nothing but you <br><br>Love, XP";
+                let poem11 = "'The Heart of Buddha'<br><br>On the climb down<br>I left all my desires<br>All my attachments<br>I leave them<br>Endlessly trickling down<br>The Batu stairs <br><br>Love, XP";
+                let poem12 = "'Sonríe por Todo'<br><br>La vida es bella<br>Cuando se sonríe <br>En los momentos<br>Que no hace falta. <br>Cuando nadie <br>O todos <br>Te miran.<br>Sonrío por el amor<br>Que llevo dentro.<br>Únicamente <br>Porque la vida<br>(El mundo)<br>(La naturaleza)<br>(La energía de la gente)<br>Me lo regala. <br>Sonreímos cuando <br>Nos damos cuenta de, <br>Y sentimos,<br>El amor que existe<br>En todo <br>A nuestro alrededor. <br><br>Love, XP";
+                let poem13 = "'Opportunity Wrapped in Fear'<br><br>I fly across the world leaving you behind. <br>Endless blue skies.  <br>None like the color of your eyes.<br><br>The passing of time<br>Brings opportunity <br>Wrapped in fear. <br><br>One day it’ll be clear. <br>I’ll fly across the world <br>Hoping to have you near. <br><br>Love, XP";
+                let poem14 = "'Free'<br><br>Clouds remind me of birds <br>Free to fly in any direction <br>Maybe with no purpose <br>Maybe just another reflection <br>Free of any worldly possessions<br><br>Clouds remind me of birds <br>Remind me of me <br>Looking for something to see <br>Beyond these faulty beliefs<br>That love should never be free <br><br>Love, XP";
+                let poem15 = "'What Do I Want?'<br><br>I found & ~lost~<br>Someone with a dream<br>I had but never spoke. <br>I learned to<br>To believe. <br>To become <br>The version of me<br>That lives out those dreams.<br>Creating a reality<br>With looks between<br>Brown & blue. <br>With each glance,<br>The waves hit the rocks. <br>Refreshing & subtlety<br>Changing them forever.<br><br>Love, XP";
+                let poem16 = "'Campo Olvidado'<br><br>Tus nubes asombrosas,<br>que me hacen sonreír<br>que nos hacían reír. <br>Túmbate a mi lado<br>en el campo olvidado.<br>Mi amor perdido.<br>Mi desastre de cuadro.<br>Que lindo encontrarte<br>aquí colgado. <br><br>Love, XP";
+                let poem17 = "'Self~Trust'<br><br>~ focused on letting this creativity flow through me<br>and seeing where it goes ~ <br><br>Love, XP";
+                let poem18 = "'Así Sí, Así No' <br><br>No encuentro el motivo. <br>Pero te pienso. <br>Te imagino. <br><br>Sin miedo <br>al no deber. <br>Sin miedo <br>al querer. <br><br>Love, XP";
+                let poem19 = "'Tasting Tears'<br><br>Your boobs are like teardrops,<br>Round and delicate. <br>It must have been<br>All the tears you shed for him,<br>That turned you into sadness.<br><br>They caress my cheeks<br>And then melt into my lips. <br>I wish you’d never cried<br>But if you did,<br>I wish they were for me. <br><br>Love, XP";
+                let poem20 = "'Tímido'<br><br>La presencia del mar. <br>El miedo a amar. <br>Tus manos <br>Bajo el agua <br>Se esconden. <br>Vente conmigo <br>O déjame volar.<br><br>Love, XP";
+                let poem21 = "'Cruzando el Horizonte'<br><br>Una manta de arcoíris <br>Cubre la tierra,<br>Al empezar y acabar el día. <br>Un abrazo<br>Lleno de paz y energía. <br><br>Será porque entre <br>El blanco y el negro,<br>El día y la noche, <br>Existe todo lo que es <br>Vida. <br><br>Este momento<br>(si lo vives)<br>Es una pausa<br>Entre las posibilidades <br>Del día <br>Y las incertidumbres <br>De la noche. <br><br>Love, XP";
+                let poem22 = "'22 Vidas'<br><br>Vivo en una fantasía. <br>Un sueño constante.<br>Me encanta soñar<br>volar<br>jugar<br>bailar<br>pintar<br>Amar. <br>Y en todo,<br>me falta paciencia. <br>Me equivoco por tristeza. <br>Como de larga es una vida,<br>si tienes mil en la cabeza?<br><br>Love, XP";
+                let poem23 = "'Lessons at 23'<br><br>I no longer feel lost<br>Learning to crawl<br>I hold on to my heart<br>And stop playing a part <br><br>This skin is my barrier<br>A kiss breaks a stone<br>Love me down to my bones<br><br>I learn to release<br>Without you I still breathe<br>My love is not for lease<br>The stars fill every need<br><br>Love, XP";
+                let poem24 = "'Promesas del Presente'<br><br>Céntrate en este<br>momento.<br>El único que hay.<br>Y el único que <br>importa. <br>Húndete —<br>completamente <br>consciente. <br>Verás, en el,<br>las bellezas de la vida. <br><br>Love, XP";
+                let poem25 = "'Fall in NY'<br><br>The seasons change.<br>The leaves don’t<br>Resist to falling. <br><br>The season of change. <br>I’ll always answer <br>If it’s you calling.<br><br>Love, XP";
+                let poem26 = "'My First True Love' <br><br>In the depths of the ocean <br>I saw your eyes <br>And swam towards them. <br><br>After 100 strokes <br>They were still as far from me <br>As before. <br><br>They bring me comfort<br>But they never bring me <br>Home. <br><br>Love, XP";
+                let poem27 = "'Tool 4 Peace'<br><br>Yoga makes me realise<br>I need so little to be happy.<br><br>Love, XP";
+                let poem28 = "'Him & I'<br><br>She wondered why they didn’t care for her.<br>And she wondered if anything would ever satisfy her.<br>And she wondered if she could ever be enough.<br>And she wondered about the beginning and end of her story.<br>And she wondered when her head would stop spinning with desire.<br>And she wondered...<br><br>And him. <br>He wondered about so much. <br>And he analysed almost everything that crossed his path. <br>He wondered about the future, not so much the past. <br>And he wondered about being lost. <br>And he wondered about life, but never too much. <br>And he wondered...<br>But he was never lost.<br><br>Love, XP";
+                let poem29 = "'For Tasha:'<br><br>This is not about <br>strength nor wisdom. <br>I will not talk about <br>beauty, pain, or fear. <br>I want to talk about you <br>because without you <br>there is nothing.<br>Yes, the world will keep spinning.<br>The sun will rise. <br>The moon will shine.<br>And the birds will fuck the bees.<br>Yet, somehow it will be incomplete. <br>No one to love the way you do.<br>No one to laugh like you. <br>So although it might seem:  <br>Like there is nothing worth feeling.<br>As if life has no meaning. <br>I know there is something out there,<br>wether it is found or created,<br>that will be all you’ve awaited. <br><br>Love, (your sister) XP";
+                let poem30 = "'Lonely Moon'<br><br>A full moon <br>Filled with nothing<br><br>Under it <br>Lonely people<br>Friends<br>Lovers<br>With slurred words<br>Speaking <br>With made up words<br><br>A cold cold night <br>Something I’ve never felt before<br><br>Laying in my bed <br>I can’t see you<br>But I can feel you over me<br>Lonely <br>Yet in the same place <br><br>Love, XP";
+                let poem31 = "'Harder Than It Seems'<br><br>The thing you spend <br>So much time avoiding <br>Is probably what <br>You should be doing<br><br>Love, XP";
+                let poem32 = "'Medianoche'<br><br>Me siento suspensa <br>en el aire.<br>Como intentar poner pie<br>en el espacio.<br>Como esperando a que alguien<br>me arranque <br>de esta gelatina paralizante.<br><br>Love, XP";
+                let poem33 = "'Through the Window'<br><br>Raindrops race to escape. <br>I want to fly. <br>They want to stay. <br>No tears fall on my face. <br><br>Love, XP";
+                let poem34 = "'Impermanence'<br><br>I know it won’t last forever <br>I know it will pass<br>I know something greater is meant for me<br>I hope it will last <br><br>Love, XP";
+                let poem35 = "'NY From Above'<br><br>How does this island<br>Hold itself up?<br>A shadow bigger <br>Than the buildings.<br>As I look from above <br>I fear the ground will sink. <br>But from bellow<br>It feels like an eternally<br>Expanding, living thing.<br><br>Love, XP";
+                let poem36 = "'Nana~Natural'<br><br>Dulce marroncito <br>Con arena en tu piel<br>En el desierto o frente al agua <br>Nunca le diré que no a tu playa <br>Siempre pensé que yo te amaba<br><br>Dulce solecito<br>Estas nubes me tapan tu olor<br>Y cuando rozas contra mi piel <br>Es más dulce que un mar de miel<br>Siempre pensé que yo te amaba <br><br>Love, XP";
+                let poem37 = "'What Do You Say?'<br><br>The way you hold my hand <br>Spills this poetry from my hands <br>I told you I have no plans <br>Hoping we would make a plan <br><br>Love, XP";
+                let poem38 = "'Jivan Mukti ॐ'<br><br>(Since I began practicing yoga…) <br>I started living consciously.<br>Noticing my steps,<br>Appreciating my strength.<br><br>In Miami,<br>I connected with my body.<br>Experiencing the beauty of its flow.<br>In Bali,<br>I connected with my soul.<br>Exposing clarity in the unknown.<br><br>I sit in silence,<br>A dream of loving-kindness.<br>I praise my teachers,<br>The most simplistic creatures.<br>Their words are the wind <br>That takes me deeper.<br>And their generous souls<br>Have built the path I will walk <br>Until I find my way home.<br><br>Love, XP";
+                let poem39 = "'Nameless Nomads'<br><br>Travelling,<br>I met people<br>Whose words<br>Spoke of dreams<br>I had only heard<br>In my own imagination. <br><br>They plan to travel <br>And travel with no plans. <br>Some would say<br>They are lost at sea. <br>But those who do,<br>Have never sailed.<br><br>Travelling,<br>I let the wind and the waves <br>Take me away<br>To ~whatever~ place.<br>It always turns fear<br>Into a smile on my face.<br><br>Love, XP";
+                let poem40 = "'Spacetime Rhyme'<br><br>How can we bend the rules of <br>time and space <br>so that we can exist in a place <br>where I never lack your embrace?<br><br>Love, XP";
+                let poem41 = "'Healing Stars'<br><br>My words may not be, <br>But this starry sky is magical. <br>Little holes on a dark surface,<br>Like a kid pricking it with a toothpick. <br>Completely random,<br>Yet inexplicably becoming. <br>And a constant divine light <br>Lives behind it. <br><br>Their presence teases me,<br>Feeling that they are here<br>While knowing they are deceiving. <br>How romantic of me <br>To write about the stars. <br>How fortunate I feel <br>To finally heal these scars.<br><br>Love, XP";
+                let poem42 = "'Todo Irá Bien'<br><br>Eres el sol. <br>Eres el agua. <br>Eres la paz en el viento. <br>Eres el pececito<br>Que se acerca a mis pies <br>Y me acaricia la piel. <br><br>Love, XP";
+                let poem43 = "'A Escondidas'<br><br>Ojalá nadie nos encontrara<br>Bajo las estrellas.<br>Pero hasta los coches nos ven  <br>Nos pitan.<br>Y las estrellas también, <br>Pasan corriendo por el cielo.<br>Corre, pide un deseo.<br><br>Love, XP";
+                let poem44 = "'De Ti a Mi'<br><br>Ultimamente <br>Me cuesta explicarlo,<br>El sentimiento,<br>La sensación<br>Que tengo<br>Cuando pienso en ti. <br>Ahora pienso en mi. <br><br>Love, XP";
+                let poem45 = "'Sorry I Broke Us'<br><br>w o r l d s a p a r t.<br>I feel so far. <br>Quiero gritar <br>y callar. <br>I know nothing <br> &nbsp turn me around.<br>We can be a anything,<br>a moment in time. <br>I break the sky <br>with all my might <br>and see the beauty<br>as its falling a p a r t.<br><br>Love, XP";
+                let poem46 = "'Your Eyes'<br><br>What is my favourite part of the body?<br>You asked me. <br>It’s the eyes, without a doubt <br>They hold a persons soul.<br>They’ve lived and seen and felt <br>Everything in your life. <br>And when they are like yours<br>They are not only my favourite body part,<br>They are the sole rhythm of my heart. <br><br>Love, XP";
+                let poem47 = "'Two Extremes'<br><br>What’s at the edge<br>of nothing and everything? <br><br>Time withered away. <br><br>Hold me close, <br>make me sway. <br><br>I feel it in my toes, <br>the way you touch me babe.<br><br>Love, XP";
+                let poem48 = "'La Atención'<br><br>Qué hacía en ese tiempo? <br>Qué hago en este tiempo?<br>Por qué la busco? <br>Por qué le tengo miedo? <br>Por qué no me acuerdo?<br><br>Love, XP";
+                let poem49 = "'Miami Breeze'<br><br>Leaves falling in water.<br>Branches of trees<br>Live perfectly still<br>Touching a blue sky<br>In this city of mine.<br>The wind will blow later<br>And I will surrender<br>Only to a touch<br>That feels tender.<br>A different life.<br>A different vice.<br>Grateful I feel stronger.<br>Leaves floating in water.<br><br>Love, XP";
+                let poem50 = "'Escondida ~ Hidding'<br><br>Que no me busque nadie <br>Tampoco esperes que no cambie<br>Me convertí en tronco de madera <br>Y ahora vivo sin ninguna pena<br>~<br>Nobody come looking for me <br>All you’ll find is this broken tree <br>I heard from the whispers of the sea <br>It longs to drift, baby take me please <br><br>Love, XP";
+                let poem51 = "'Too Much'<br><br>I write about you so much <br>Too much?<br><br>Not sure if it was your touch<br>Or how your laugh makes me blush<br>Or the way you ate your brunch<br>That got me mushed in this crush<br><br>I think about you so much<br>Too much? <br><br>I know how I wanna be touched <br>I need to unlearn how to shush<br>Sometimes I feel rushed<br>It’s my intuition I need to trust<br><br>Love, XP";
+                let poem52 = "'Kata'<br><br>Damn, I miss my sister<br><br>My healer, don’t see her<br>I’d love to have her nearer <br>Can’t find her in the mirror<br><br>A source to my drop<br>She’s part of my flock <br>I get it she’s god<br>Tell me she’s hot<br><br>I’ll tell you she’s kind <br>That type that blows your mind<br>I ask her what she finds<br>She tells me every time: <br><br>Don’t hold back cause of fears<br>Face them and deal <br>Life is a deal <br>Between you and your feels<br><br>Love, XP";
+                let poem53 = "'Pepe'<br><br>Damn, I miss my brother<br><br>He loves to discover<br>A brain like no other <br>A heart like my mothers<br><br>I look up to him <br>I wish I had his grit <br>So easily commits <br>I swear he’s g-shit<br><br>We used to throw fists<br>So much love that it bleed<br>We finally agreed <br>We don’t wanna live with greed <br><br>He’s doper than this flow <br>Calls me just to say hello <br>Never asks me for more <br>It’s him I adore<br><br>Love, XP";
+                let poem54 = "'Mamá'<br><br>Damn, I miss my mom  <br><br>A woman full of charm<br>Always kisses, sweet alarm <br>Never fails to keep me warm <br><br>Had some trouble with our bond <br>Thank god we went beyond <br>Taught me how to swim above<br>How to only live with love<br><br>Love, XP";
+                let poem55 = "'Papá'<br><br>Damn, I miss my dad <br><br>The best friend I ever had<br>He always understands<br>I don’t wanna live with plans <br><br>Wise but juvenile <br>A lesson with a smile<br>Almost fictional lifestyle <br>Taught me how to freestyle <br><br>Love, XP";
+                let poem56 = "'Clues in these Blues'<br><br>My heart skips a beat <br>When I’m around you <br>Those light blues <br>Some dope tunes <br>A hidden long love clue<br><br>Love, XP";
+                let poem57 = "'Mi Primer Rap Español'<br><br>Viajando por el mundo <br>Buscando el mar más profundo <br>Un amor que sea crudo <br>Todo el mundo está duro <br>Un momento oportuno <br>Todos sin ti son oscuros<br><br>Love, XP";
+                let poem58 = "'Scattered Thoughts'<br><br>What is a thought?<br>Nothing but a drop<br><br>Of your lips<br>On my skin<br><br>Inside or out<br>Your love is like a drought<br><br>Lately, the love that I express<br>Is not the love that I receive  <br><br>Fuck a beat<br>I might just drop my dream<br><br>Love, XP";
+                let poem59 = "'Part of a Song'<br><br>It ain’t fair that <br>To me you’re like air<br>Can’t breathe without you<br>Just fucking with you<br>But lately <br>It feels <br>Like I need <br>An IV <br>With your gene<br><br>Love, XP";
+                let poem60 = "'Simple Solutions'<br><br>On a rainy gloomy day <br>Showing colors that are true<br>I know I act a fool<br>&nbsp&nbsp&nbspI’m sorry<br>Is all I have to say<br><br>On a rainy gloomy day<br>I choose to walk straight through<br>Nature’s mindful dew<br>&nbsp&nbsp&nbspMy home<br>It’s where I want to stay<br><br>Love, XP";
+                let poem61 = "'Residente Permanente'<br><br>Todos los dias me escapo<br>Y me pierdo en mi mente <br>Pero siempre te encuentro ahí <br><br>Tus ojos, tu voz<br>No me dejan dormir<br>No quiero dormir <br><br>Hasta el ruido de un trueno <br>Me recuerda a ti <br>A lo que me hacías sentir<br><br>Tumbados<br>Desatados <br>Podría seguir así<br><br>Love, XP";
+                let poem62 = "'La Verdad'<br><br>Escribo por ti, de ti, y para ti.<br><br>Love, XP";
+                let poem63 = "'Still Doubting'<br><br>What feels right? <br>Heart tight. <br><br>Pull on my string, <br>I’ll buy you a drink. <br><br>Memories confuse me,<br>Delude me. <br><br>No se si fue verdad. <br>Ya veré cuando te vuelva a mirar. <br><br>Love, XP";
+                let poem64 = "'You Again'<br><br>I love without care.<br>I love a good dare. <br>I can’t explain <br>why you left me bare. <br><br>I feel constantly<br>a distant memory <br>of a day<br>where I woke up late. <br><br>A ghost by my side. <br>Shit, <br>I can’t keep it <br>inside.<br><br>Love, XP";
+                let poem65 = "'Boat Poems'<br><br>Fields of clouds <br>Feels of doubts <br>Fears of vastness <br>Being brave regardless<br><br>New places every week <br>No longer do I feel weak<br><br>I want to walk with my feet<br>Every meter that is green<br>I want to trace with my fingers <br>The love that still lingers<br><br>Love, XP";
+                let poem66 = "'A Gusto'<br><br>Se va apagando la luz. <br>Colores azules retumban,<br>Predominan mi vida. <br><br>El color del agua.<br>El color del cielo.<br>El color del viento.<br><br>Pinto sus tonos. <br>Sueño con sus besos. <br>Me visto y me desnudo de azul. <br><br>Será su calma <br>O su naturaleza infinita<br>La que me lleva a su orilla.<br><br>Mi corazón azul,<br>Sigo buscando tu luz. <br><br>Love, XP";
+                let poem67 = "'Questions 4 You'<br><br>Why do some turn yellow?<br>And others stay green?<br><br>Gray skies <br>Purple nights <br>Orange leaves<br>Your mellow breeze<br><br>Believe me <br>When I say <br>I’ll see you again some day <br><br>Love, XP";
+                let poem68 = "'Space in Between'<br><br>I like the texture of the clouds <br>You like the texture of the walls <br>I keep my feet on the ground<br>But if you count<br>You’ll watch me float to mars <br>Your feet beneath the sheets <br>Never reach for me <br>Just a memory of something<br>I believe <br><br>Love, XP";
+                let poem69 = "'A Way of Being Pt. 1'<br><br>“There’s a time for certain ideas to arrive, <br>And they find a way <br>To express themselves through us” <br>(Rick Rubin, The Creative Act)<br><br>There is a time for everything <br><br>This pressure to “do” something<br>Is nothing<br>But my mind’s judgements <br>Unproductive mind games <br>I remember to release<br>This pressure every~single~day<br>So I may flow with the eternal waters<br>That run within and around me<br><br>There is a time for everything <br>There is everything in this time <br><br>Love, XP";
+                let poem70 = "'A Way of Being Pt. 2'<br><br>“There’s a reason we are drawn <br>To gazing at the ocean. <br>It is said the ocean provides <br>A closer reflection of who <br>We are than any mirror.” <br>(Rick Rubin, The Creative Act)<br><br>I am constantly drawn to the ocean <br>Maybe hoping to find myself there <br>Eternal reflections of complexity in motion<br>Lost in awe of its deepness, I stare <br>No goal or intention <br>Just a delicate care <br><br>Love, XP";
+                let poem71 = "'Sunset From a Plane'<br><br>Is the sun setting? <br>Or am I descending?<br>Into the unknown<br>Looking to be reborn <br>Or for the reason I was born<br>Captivated by the last light <br><br>Warm orange hugs<br>That shouldn’t make sense<br>Still I fully embrace them<br>For their warmth<br>For their strange familiarity<br>For their fleeting nature<br><br>Slowly, darkness falls<br>Looking for an enduring moment <br>The lasting night<br><br>Love, XP";
+                let poem72 = "'Love Potion'<br><br>Like my hands on the sand<br>Near the shore<br>When I am with you <br>I feel it firmly, the feeling of home <br><br>Like a wave coming in <br>The sand under my hand <br>Melts and slips away<br>From my gentle touch<br><br>I can’t understand <br>How in this distance  <br>You leave me feeling bare <br><br>My love,<br>I love the ocean<br>But it’s you whose got the potion <br><br>Love, XP";
+                let poem73 = "'Muñeca Con Cabeza'<br><br>Si me vida está llena <br>Por qué siento esta pena?<br><br>Tu mirada me alegra <br>Tu distancia me quema<br>El tiempo me pesa <br><br>A qué esperas?<br>Una muñeca sin cabeza?<br>Un corazón que no aprieta? <br><br>Mi amor no lo aprecias <br>Ni mis mensajes contestas <br>Pero se que los miras <br><br>Esta relación es tan fría <br>Quien no lo diría <br>Que otra vez me equivocaría <br><br>Love, XP";
+                let poem74 = "'NY Street Raps Pt. 1'<br><br>Finding rays <br>Planes with delays <br>Ask me to stay <br>I’ll learn to pray <br>Tell me your game <br>Fuck it I’ll play <br>Cold New York days <br>They pass in a haze <br>Thoughts are the same <br>Fuck cupid’s aim<br>Please don’t put out this flame <br><br>Love, XP";
+                let poem75 = "'NY Street Raps Pt. 2'<br><br>I love this city <br>You’re looking pretty <br>Got me believing <br>In some ultimate feeling<br>A passionate being<br>What are you dreaming? <br>What’s a life without meaning?<br>A touch without healing? <br>Slightly deceiving<br>When’s our next meeting?<br>For now I’ll keep breathing <br><br>Love, XP";
+                let poem76 = "'Esencya'<br><br>Algo de tu esencia <br>Requiere mi presencia <br>Escucho lo que piensas <br>No mientas<br>Me sientes? <br>Presente?<br>Hundida en tu mente<br>Contigo nunca impaciente<br>Apareciste de repente <br>Una conexión valiente<br><br>Love, XP";
+                let poem77 = "'Escape'<br><br>Can you feel me drifting away <br>Cause I am <br><br>I never told you <br>Cause you ran <br><br>Love, XP";
+                let poem78 = "'Essential Lessons'<br><br>My throat closes up <br>and I learn how to talk <br>my own truth.<br><br>My legs give up<br>and I learn how to walk <br>by myself. <br><br>My ears fill up <br>and I learn how to listen <br>to my body. <br><br>Love, XP";
+                let poem79 = "'Absent'<br><br>In my dream state <br>I am kissing you <br>In my conscious state <br>I’m just missing you <br><br>Love, XP";
+                let poem80 = "'In Any Fucking Order'<br><br>I don’t Netflix and chill<br>I don’t fuck with this deal<br>Please don’t take no more pills<br>Don’t like how it feels <br>I sip tea, don’t spill <br><br>Love, XP";
+                let poem81 = "'Take Care'<br><br>There is a world inside of me <br>That I long to share <br>It won’t make me feel free<br>For I am already there <br><br>Love, XP";
+                let poem82 = "'Quitely'<br><br>I think of him daily<br>I dream of him nightly<br>292 days precisely <br><br>It’s been quite unwisely <br>But still I love him slightly <br>Requite is fairly unlikely<br><br>One day I’ll ask him nicely<br>To stay beside me <br>Or please leave politely <br><br>Love, XP";
+                function checkPoemNum() {
+                    const poemNum = document.getElementById("poemNum").value;
+                    const resultPoem = document.getElementById("result");
+                    switch(poemNum){
+                        case "1": resultPoem.innerHTML = poem1; break;
+                        case "2": resultPoem.innerHTML = poem2; break;
+                        case "3": resultPoem.innerHTML = poem3; break;
+                        case "4": resultPoem.innerHTML = poem4; break;
+                        case "5": resultPoem.innerHTML = poem5; break;
+                        case "6": resultPoem.innerHTML = poem6; break;
+                        case "7": resultPoem.innerHTML = poem7; break;
+                        case "8": resultPoem.innerHTML = poem8; break;
+                        case "9": resultPoem.innerHTML = poem9; break;
+                        case "10": resultPoem.innerHTML = poem10; break;
+                        case "11": resultPoem.innerHTML = poem11; break;
+                        case "12": resultPoem.innerHTML = poem12; break;
+                        case "13": resultPoem.innerHTML = poem13; break;
+                        case "14": resultPoem.innerHTML = poem14; break;
+                        case "15": resultPoem.innerHTML = poem15; break;
+                        case "16": resultPoem.innerHTML = poem16; break;
+                        case "17": resultPoem.innerHTML = poem17; break;
+                        case "18": resultPoem.innerHTML = poem18; break;
+                        case "19": resultPoem.innerHTML = poem19; break;
+                        case "20": resultPoem.innerHTML = poem20; break;
+                        case "21": resultPoem.innerHTML = poem21; break;
+                        case "22": resultPoem.innerHTML = poem22; break;
+                        case "23": resultPoem.innerHTML = poem23; break;
+                        case "24": resultPoem.innerHTML = poem24; break;
+                        case "25": resultPoem.innerHTML = poem25; break;
+                        case "26": resultPoem.innerHTML = poem26; break;
+                        case "27": resultPoem.innerHTML = poem27; break;
+                        case "28": resultPoem.innerHTML = poem28; break;
+                        case "29": resultPoem.innerHTML = poem29; break;
+                        case "30": resultPoem.innerHTML = poem30; break;
+                        case "31": resultPoem.innerHTML = poem31; break;
+                        case "32": resultPoem.innerHTML = poem32; break;
+                        case "33": resultPoem.innerHTML = poem33; break;
+                        case "34": resultPoem.innerHTML = poem34; break;
+                        case "35": resultPoem.innerHTML = poem35; break;
+                        case "36": resultPoem.innerHTML = poem36; break;
+                        case "37": resultPoem.innerHTML = poem37; break;
+                        case "38": resultPoem.innerHTML = poem38; break;
+                        case "39": resultPoem.innerHTML = poem39; break;
+                        case "40": resultPoem.innerHTML = poem40; break;
+                        case "41": resultPoem.innerHTML = poem41; break;
+                        case "42": resultPoem.innerHTML = poem42; break;
+                        case "43": resultPoem.innerHTML = poem43; break;
+                        case "44": resultPoem.innerHTML = poem44; break;
+                        case "45": resultPoem.innerHTML = poem45; break;
+                        case "46": resultPoem.innerHTML = poem46; break;
+                        case "47": resultPoem.innerHTML = poem47; break;
+                        case "48": resultPoem.innerHTML = poem48; break;
+                        case "49": resultPoem.innerHTML = poem49; break;
+                        case "50": resultPoem.innerHTML = poem50; break;
+                        case "51": resultPoem.innerHTML = poem51; break;
+                        case "52": resultPoem.innerHTML = poem52; break;
+                        case "53": resultPoem.innerHTML = poem53; break;
+                        case "54": resultPoem.innerHTML = poem54; break;
+                        case "55": resultPoem.innerHTML = poem55; break;
+                        case "56": resultPoem.innerHTML = poem56; break;
+                        case "57": resultPoem.innerHTML = poem57; break;
+                        case "58": resultPoem.innerHTML = poem58; break;
+                        case "59": resultPoem.innerHTML = poem59; break;
+                        case "60": resultPoem.innerHTML = poem60; break;
+                        case "61": resultPoem.innerHTML = poem61; break;
+                        case "62": resultPoem.innerHTML = poem62; break;
+                        case "63": resultPoem.innerHTML = poem63; break;
+                        case "64": resultPoem.innerHTML = poem64; break;
+                        case "65": resultPoem.innerHTML = poem65; break;
+                        case "66": resultPoem.innerHTML = poem66; break;
+                        case "67": resultPoem.innerHTML = poem67; break;
+                        case "68": resultPoem.innerHTML = poem68; break;
+                        case "69": resultPoem.innerHTML = poem69; break;
+                        case "70": resultPoem.innerHTML = poem70; break;
+                        case "71": resultPoem.innerHTML = poem71; break;
+                        case "72": resultPoem.innerHTML = poem72; break;
+                        case "73": resultPoem.innerHTML = poem73; break;
+                        case "74": resultPoem.innerHTML = poem74; break;
+                        case "75": resultPoem.innerHTML = poem75; break;
+                        case "76": resultPoem.innerHTML = poem76; break;
+                        case "77": resultPoem.innerHTML = poem77; break;
+                        case "78": resultPoem.innerHTML = poem78; break;
+                        case "79": resultPoem.innerHTML = poem79; break;
+                        case "80": resultPoem.innerHTML = poem80; break;
+                        case "81": resultPoem.innerHTML = poem81; break;
+                        case "82": resultPoem.innerHTML = poem82; break;
+                        default: resultPoem.innerHTML = "Invalid number input :( Try again!";
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
