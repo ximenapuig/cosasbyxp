@@ -409,6 +409,11 @@ footer h4{
     text-align: center;
     padding: 0 12px;
   }
+.tabcontent p{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: normal;
+    font-style: normal;
+}
   
 .project-gall{
     display: flex;
