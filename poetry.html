@@ -24,7 +24,7 @@
                 <br> This way, not only does it feel a little like a game, it is also a way to give each poem the individuality they deserve.
                 <br> You will find that most are written in English, others in Spanish, and a few in Spanglish. Poems are not in chronological order :)
             </p>
-            <p>Pick a number from 1-82 to start reading...</p>
+            <p>Pick a number from 1-84 to start reading...</p>
             Poem #: <input type="number" id="poemNum">
             <button onclick="checkPoemNum()">take me there...</button>
             <br>
@@ -116,6 +116,8 @@
                 let poem80 = "'In Any Fucking Order'<br><br>I don’t Netflix and chill<br>I don’t fuck with this deal<br>Please don’t take no more pills<br>Don’t like how it feels <br>I sip tea, don’t spill <br><br>Love, XP";
                 let poem81 = "'Take Care'<br><br>There is a world inside of me <br>That I long to share <br>It won’t make me feel free<br>For I am already there <br><br>Love, XP";
                 let poem82 = "'Quitely'<br><br>I think of him daily<br>I dream of him nightly<br>292 days precisely <br><br>It’s been quite unwisely <br>But still I love him slightly <br>Requite is fairly unlikely<br><br>One day I’ll ask him nicely<br>To stay beside me <br>Or please leave politely <br><br>Love, XP";
+                let poem83 = "'At Ease'<br><br>“In facing the void, there is a tension of opposites. There is an excitement for the possibility something great may be realized and a dread it might not. And the result is out of our control.”<br>(Rick Rubin, The Creative Act) <br><br>Tension of opposites<br>Awareness of extremes <br><br>Let it be a dream<br>Where control ceases to exist <br>Where our job is only to perceive<br><br>Let the drops fall as they please<br>Without shame, with ease <br>All becomes as is and should be<br><br>Love, XP";
+                let poem84 = "'Walls'<br><br>“Many people may seem walled off. <br>But sometimes walls can provide <br>different ways of seeing <br>over and around obstacles.”<br>(Rick Rubin, The Creative Act)<br><br>I seek not to tear down your walls<br>But to carefully climb its stones<br>To find the hidden holes<br>To explore the perimeter <br>For high and lows <br><br>For I know<br>That the beauty inside <br>Feels safe and at home<br>A place to thrive <br>I seek only to let it shine<br><br>Love, XP";
                 function checkPoemNum() {
                     const poemNum = document.getElementById("poemNum").value;
                     const resultPoem = document.getElementById("result");
@@ -202,6 +204,8 @@
                         case "80": resultPoem.innerHTML = poem80; break;
                         case "81": resultPoem.innerHTML = poem81; break;
                         case "82": resultPoem.innerHTML = poem82; break;
+                        case "83": resultPoem.innerHTML = poem83; break;
+                        case "84": resultPoem.innerHTML = poem84; break;
                         default: resultPoem.innerHTML = "Invalid number input :( Try again!";
                     }
                 }
